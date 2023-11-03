@@ -1,0 +1,97 @@
+.routeSuperParent{
+    display: flex;   
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    height: 12vh;
+    /* background-color: rgb(156, 209, 209); */
+    background-color: white;
+}
+.parent2{
+    width: 50vw;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    list-style-type:none;
+    gap:2vw;
+    justify-content: center;
+    align-items: baseline;
+    /* border: 2px solid red; */
+}
+.firstheading{
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.linkParent{
+    display: flex;
+    flex-direction: row;
+    list-style-type:none;
+    gap:2vw;
+}
+ul li .links{
+    text-decoration-line: none;
+    font-size: 18px;
+}
+.links:hover{
+    background-color: rgb(189, 129, 200);
+}
+.parent3{
+    width: 45vw;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    list-style-type:none;
+    justify-content: flex-end;
+    align-items: center;
+    gap:1vw;
+    /* border: 2px solid red; */
+}
+.searchbar{
+    width:12vw;
+    height: 3vh;
+}
+.iconsParent{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: row;
+    list-style-type:none;
+    gap:2vw;
+}
+.slideShowimage{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60vh;
+    /* border: 2px solid red; */
+    background-image: url('https://m.media-amazon.com/images/I/61+r3+JstZL._SL1500_.jpg'),linear-gradient(white,gray);
+    background-size: auto 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: imgchange 6s ease-in-out 0s infinite forwards;
+    /* background-color: rgb(148, 139, 139); */
+}
+@keyframes imgchange {
+    0%{
+        background-color: black;
+        background-image: url('https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/CatPage/JUPITER/Phase3/Header/Header_1500x300_01.gif'),linear-gradient(white,gray);
+    }
+    25%{
+        background-color: black;
+        background-image:url('https://m.media-amazon.com/images/I/81SocKy8ghL._SL1500_.jpg'),linear-gradient(white,rgb(228, 230, 216)) ;
+    }
+    40%
+    {
+        background-color: black;
+        background-image: url('https://m.media-amazon.com/images/I/61EXU8BuGZL._SL1100_.jpg'),linear-gradient(white,rgb(228, 230, 216));
+    }
+    100%{
+        background-color: rgb(231, 228, 93);
+        background-image: url('https://m.media-amazon.com/images/I/61uGyQfTscL._SL1001_.jpg'),linear-gradient(rgb(177, 173, 103),rgb(216, 225, 133));
+    }
+}
+.slideimage{
+    /* line-height: 4vh; */
+    width: auto;
+    height:50vh;
+    
+}
