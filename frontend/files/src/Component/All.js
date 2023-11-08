@@ -21,7 +21,10 @@ const All = () => {
   return (
     <>
     <div>
-      <h1>All</h1>
+      {all.map((item)=>{
+        <h1>All</h1>
+      })}
+      
     </div>
     <Outlet/>
     </>

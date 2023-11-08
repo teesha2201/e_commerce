@@ -2,21 +2,17 @@ const advertisment = []
 const home =[
     {
         id:1,
-        image:"https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1046927/iBA02UPFrm-1046927_1.jpg?dpr=1",
-        price:1326,
-        product_name:"MARS Mesmereyes Eyeshadow Palette (3.5gm)",
-        product_details:
-        [
-            'it has one swipe pigmentation',
-            'The shades are soft to touch',
-            'There is minimal fallout in this palette',
-            'The palette has a mix of matte, shimmer and glitter shades',
-            'It comes in 3 beautiful variants',
-            'Moreover, the eyeshadows can be used in multiple ways like blush, brow filler, contour, highlighter and eyeliner',
-            'You can convert any day look to a night look with the pressed glitter shade in each palette'
-        ],
-        company_name:"Mars",
-        category:"beautyProduct"
+        image:"https://m.media-amazon.com/images/I/61CjYtVb7cL._SL1500_.jpg",
+        price:53998,
+        product_name:"Apple 2022 iPad Air M1 Chip (10.9-inch/27.69 cm, Wi-Fi, 64GB) - Space Gray (5th Generation)",
+        product_features:{    
+            "Brand":"Apple",
+            "Model Name":"IPad Air",
+            "Memory Storage Capacity":"64 GB",
+            "Screen Size":"10.9 Inches",
+            "Operating System":"IPadOS"
+        },
+        category:"electronics"
     },
     {
         "id": 2,
@@ -32,6 +28,7 @@ const home =[
             "RAM type": "DDR4",
             "Graphic Processor": "Intel UHD Graphics"
         },
+        company_name:"Asus",
         "category": "electronics"
     },
     {
@@ -46,6 +43,7 @@ const home =[
             "Operating System":"IOS 14",
             "Cellular Technology":"5G"
         },
+        company_name:"Apple",
         category:"electronics"
 
     },
@@ -62,6 +60,7 @@ const home =[
             "Recommended Uses For Product":"Home & office work/use"
             
         },
+        company_name:"Typecase",
         category:"electronics"
     },
     {
@@ -76,17 +75,77 @@ const home =[
             "Operating System": "Android 13.0",
             "Cellular Technology": "4G"
         },
+        company_name:"Realme",
         "category": "electronics"
     },
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
+    {
+        id:6,
+        image:"https://assets.myntassets.com/assets/images/14224086/2021/8/23/64911e3c-9333-48e5-8cf7-46e29d03f0141629695458483-Anouk-Women-Black-Floral-Printed-Regular-Top-with-Harem-Pant-5.jpg",
+        price:1375,
+        procdut_name:'Anouk Women Black Ethnic Motifs Printed Kurta with Palazzos & With Dupatta',
+        product_details:['Ethnic motifs printed', 'A-line shape','Regular style','Mandarin collar, three-quarter regular sleeves','Knee length with straight hem','Viscose rayon knitted and woven fabric'],
+        Material_Care:'100% Viscose Rayon chine wash',
+        category:'woman'
+    },
+    {
+        id:7,
+        image:"data:image/jpeg;base64,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",
+        price:2567,
+        product_name:'Foreverkidz Kids Pink Full Sleeves frock',
+        product_details:["Amp up your little kid's",' wardrobe with this black and pink top and skirt set from Foreverkidz',' Tailored to sartorial perfection from velvet fabric', 'it assures a soft' ],
+        Material_Care:"slik and polyester",
+        category:'kids'
+    },
+    {
+        id:8,
+        image:"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSuBVb2w2SICrcRYoMf6wRD_U7WYcdDc9Oty1ZfNmVP7wIpEA2sp6SVqQwIUfkCoQBcbOiQxnVZv9Te8ZYkLSwLca7mQy2-SCpiUrY7g5_iB4usWm3nf621hpEQSFPdrfFlsUh4OyY&usqp=CAc",
+        price:1950,
+        product_name:"MATTE LIPSTICK",
+        product_details:
+        [
+           'Amplified: cream finish',
+            'Cremesheen: high-shine finish',
+            'Frost: frost finish',
+            'Lustre: semi-gloss finish',
+            'atte: matte finish',
+            'Retro Matte: matte finish',
+            'Satin: semi-matte finish',
+        ],
+        company_name:"Mac",
+        category:"beautyProduct"
+    },
+    {
+        id:9,
+        image:"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSvK2JxD3ydu138hszMEoTx0hgjj7xczgPOpnaIpDg6nsE_choVgKQXIyOSnoyZhrBoA6S2jFkfNTz27yyjCOy6Ew9yqolA1i4orumo8X0WfjT0i42j5fwP&usqp=CAE",
+        price:3300,
+        product_name:"M.A.C Studio Fix Powder Plus Foundation - C2 (15g)",
+        product_details:
+        ['12-Hour Medium-To-Full Coverage',
+        'Ultra-Matte Finish',
+        ' Controls Oil/Shine',
+        'Titanium Dioxide'
+        ],
+        company_name:"Mac",
+        category:"beautyProduct"
+    },
+    {
+        id:10,
+        image:"https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1046927/iBA02UPFrm-1046927_1.jpg?dpr=1",
+        price:1326,
+        product_name:"MARS Mesmereyes Eyeshadow Palette (3.5gm)",
+        product_features:
+        [
+            'it has one swipe pigmentation',
+            'The shades are soft to touch',
+            'There is minimal fallout in this palette',
+            'The palette has a mix of matte, shimmer and glitter shades',
+            'It comes in 3 beautiful variants',
+            'Moreover, the eyeshadows can be used in multiple ways like blush, brow filler, contour, highlighter and eyeliner',
+            'You can convert any day look to a night look with the pressed glitter shade in each palette'
+        ],
+        company_name:"Mars",
+        category:"beautyProduct"
+    },
 ]
 const all =[
     {},

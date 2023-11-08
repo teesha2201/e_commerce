@@ -12,6 +12,9 @@ const groceryController = (req,res)=>{
 const fashionController = (req,res)=>{
     res.send(fashion)
 }
+const mensController = (req,res) =>{
+    res.send(fashion)
+}
 const beautyProductController = (req,res)=>{
     res.send(beautyProduct)
 }
@@ -22,4 +25,7 @@ const MoreDetails = (req,res) =>{
     res.send(mac)
 }
 
-module.exports ={homeController,allController,groceryController,fashionController,beautyProductController,electronicsController,MoreDetails}
+module.exports ={homeController,allController,groceryController,fashionController,beautyProductController,electronicsController,MoreDetails,
+     mensController
+
+}
