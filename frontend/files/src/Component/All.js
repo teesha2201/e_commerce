@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import axios from "axios";
+
 import { Outlet } from 'react-router-dom';
 const All = () => {
   const [all,setAll] = useState([])

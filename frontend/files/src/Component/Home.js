@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../Style/Home.css"
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 const Home = () => {
   const [home,setHome] = useState([])
     useEffect(()=>{
@@ -35,14 +35,14 @@ const Home = () => {
                 <img
                   className="slideShowimage"
                   src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/CatPage/JUPITER/Phase3/Header/Header_1500x300_01.gif"
-                  alt="Image 1"
+                  alt="Not found"
                 />
               </div>
               <div>
                 <img
                   className="slideShowimage"
                   src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/misc/general/free/original/XtnfKRsEC-Reset_Desktop.jpg?dpr=1"
-                  alt="Image 2"
+                  alt="Not Found"
                   width="100%"
                 />
               </div>
@@ -50,7 +50,7 @@ const Home = () => {
                 <img
                   className="slideShowimage"
                   src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/PCGrapgics/12_Steal_Deals_Sarees_to_love._SX3000_QL85_.jpg"
-                  alt="Image 3"
+                  alt="Not Found"
                   width="100%"
                 />
               </div>
@@ -58,7 +58,7 @@ const Home = () => {
                 <img
                   className="slideShowimage"
                   src="https://m.media-amazon.com/images/G/31/img23/Beauty/Jupiter23/Headers/1pc._CB573639892_.jpg"
-                  alt="Image 4"
+                  alt="Not Found"
                   width="100%"
                 />
               </div>
@@ -67,17 +67,9 @@ const Home = () => {
         <h1 className=''>Top Company Laptop and Phone </h1>
         </div>
       </div >
-      <div >
-      {home.map((item,index)=>{
-        <div key={index}>
-          <div >
-            <img src={item.product_name}/>
-          </div>
-        </div>
-      
+      {home.map((item)=>{
+        <h1>{item.category}</h1>
       })}
-      
-      </div>
     </div>
     <Outlet/>
     </>

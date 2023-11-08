@@ -5,13 +5,20 @@ import Electronics from '../Component/Electronics';
 import Home from '../Component/Home';
 import All from '../Component/All';
 import Fashion from '../Component/Fashion';
+import Men from '../SubRoute/Fashion/Mens';
+import Women from "../SubRoute/Fashion/Women";
+import Kids from '../SubRoute/Fashion/KidsWear';
 import Grocery from '../Component/Grocery';
-import BeautyProduct from '../Component/BeautyProduct';
-import Mobile from "../Component/Mobile";
-import IPhone from '../Component/IPhone';
-import Watchs from "../Component/Watch's";
-import MoreDetails from "../Component/MoreDetails"
 import Snacks from '../SubRoute/Grocery/Snacks';
+import TeaCofeeBeverages from '../SubRoute/Grocery/TeaCoffee';
+import IndianRegularFood from "../SubRoute/Grocery/IndianRegularFood";
+import BeautyProduct from '../Component/BeautyProduct';
+import Mac from "../SubRoute/Beautyproduct/Mac";
+import SwissBeauty from "../SubRoute/Beautyproduct/SwissBeauty";
+import IPhone from '../SubRoute/Electronics/Iphone';
+import Laptop from "../SubRoute/Electronics/Laptop"
+import MoreDetails from "../Component/MoreDetails";
+
 
 import './Navbar.css' ;
 // import './NewNavbar.css';
@@ -54,22 +61,20 @@ const Navbar = () => {
             <ul className='linkParent'>
                 
                 <li onDoubleClick={toggleHomeMenu} className='fashion-link'>
-                  {/* <div onMouseDown={toggleHomeMenu} className='fashion-link'> */}
                     <NavLink to="/" className="links">HOME</NavLink>
-                  {/* </div> */}
-                  {isHomeData && (
-                    <ul className="all_sub">
-                    <li>
-                      <NavLink to="/api/all">All</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/api/fashion">Fashion</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/api/beautyprodut">Beauty Product</NavLink>
-                    </li>
-                  </ul>
-                  )}
+                    {/* {isHomeData && (
+                      <ul className="all_sub">
+                        <li>
+                          <NavLink to="/api/all">All</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/api/fashion">Fashion</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/api/beautyprodut">Beauty Product</NavLink>
+                        </li>
+                    </ul>
+                  )} */}
                 </li>
                 
                 <li onDoubleClick={toggleAllMenu } className="fashion-link">
@@ -93,18 +98,18 @@ const Navbar = () => {
 
                 <li onDoubleClick={toggleFashionMenu } className="fashion-link">
                     {/* <div onMouseDown={toggleFashionMenu } className="fashion-link"> */}
-                      <NavLink to="/api/fashion" className="links">Fashion</NavLink>
+                      <NavLink to="/fashion" className="links">Fashion</NavLink>
                     {/* </div>   */}
                     {isFashiondata && (
                     <ul className="fashion_sub">
                       <li>
-                        <NavLink to="/fashion/Men's">Men's</NavLink>
+                        <NavLink to="/fashion/men">Men's</NavLink>
                       </li>
                       <li>
-                        <NavLink to="/fashion/Women's">Women's</NavLink>
+                        <NavLink to="/fashion/women">Women's</NavLink>
                       </li>
                       <li>
-                        <NavLink to="/fashion/kid's">Kid's</NavLink>
+                        <NavLink to="/fashion/kid">Kid's</NavLink>
                       </li>
                     </ul>
                     )}
@@ -141,9 +146,9 @@ const Navbar = () => {
                     <li>
                       <NavLink to="api/beautyproduct/swissBeauty">Swiss Beauty</NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                       <NavLink to="api/beautyproduct/skinCare">SkinCare & accessories</NavLink>
-                    </li>
+                    </li> */}
                   </ul>
                   )}
                 </li>
@@ -169,16 +174,12 @@ const Navbar = () => {
             </ul>
         
         <div className='parent3'>
-            {/* <span><i class="fa-solid fa-magnifying-glass"></i></span> */}
-            
-
            <ul className='iconsParent'>
             <li><input placeholder='Search here...                      🔍' className="searchbar"/></li>
             <li><i class="fa-solid fa-cart-shopping"></i></li>
             <li><i class="fa-regular fa-heart"></i></li>
             <li><i class="fa-solid fa-user"></i></li>
            </ul>
-         
         </div>
 
         </nav>
@@ -195,25 +196,25 @@ const Navbar = () => {
                   <Route path=""></Route>
                   <Route path=""></Route>
                 </Route>
-                <Route path="/api/fashion" element={<Fashion/>}>
-                  <Route path="/api/fashion/mens">Men's</Route>
-                  <Route path="/api/fashion/women">women's</Route>
-                  <Route path="/api/fashion/kid's"></Route>
+                <Route path="/fashion" element={<Fashion/>}>
+                  <Route path="/fashion/men" element={<Men/>}>Men's</Route>
+                  <Route path="/fashion/women" element={<Women/>}>Women's</Route>
+                  <Route path="/fashion/kid" element={<Kids/>}></Route>
                 </Route>
                 <Route path="api/grocery" element={<Grocery/>}>
-                  <Route path="api/grocery/snacks"></Route>
-                  <Route path="api/grocery/teaCofeeBeverages"></Route>
-                  <Route path="api/grocery/indianRegularFood"></Route>
+                  <Route path="api/grocery/snacks" element={<Snacks/>}></Route>
+                  <Route path="api/grocery/teaCofeeBeverages" element={<TeaCofeeBeverages/>}></Route>
+                  <Route path="api/grocery/indianRegularFood" element={<IndianRegularFood/>}></Route>
                 </Route>
                 <Route path="api/beautyproduct" element={<BeautyProduct/>}>
-                  <Route path="api/beautyproduct/mac"></Route>
-                  <Route path="api/beautyproduct/swissBeauty"></Route>
-                  <Route path="api/beautyproduct/skinCare"></Route>
+                  <Route path="api/beautyproduct/mac" element={<Mac/>}></Route>
+                  <Route path="api/beautyproduct/swissBeauty" element={<SwissBeauty/>}></Route>
+                  {/* <Route path="api/beautyproduct/skinCare"></Route> */}
                 </Route>
                 <Route path="/electronics" element={<Electronics/>}>
                   <Route path="/electronics/iphone" element={<IPhone/>}></Route>
-                  <Route path="/electronics/laptop"></Route>
-                  <Route path="/electronics/tv&homeapplicance"></Route>
+                  <Route path="/electronics/laptop" element={<Laptop/>}></Route>
+                  {/* <Route path="/electronics/tv&homeapplicance"></Route> */}
                 </Route>
                 {/* Dynamic Route try */}
                 <Route path="/moreDetails/:id" element={<MoreDetails/>}/>

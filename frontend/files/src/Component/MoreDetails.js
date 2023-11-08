@@ -5,22 +5,22 @@ import axios from "axios";
 function MoreDetails(){
     const {id} = useParams();
     const newid = parseInt(id)
-    const [moredetails,setMoreDetails] = useState({})
-    const [test,settest] =useState([])
+    // const [moredetails,setMoreDetails] = useState({})
+    const [moredetails,setMoreDetails] =useState([])
     const navigate = useNavigate();
     useEffect(()=>{
             axios.get('http://localhost:5005/api/beautyproduct/')
-            .then((res)=>settest(res.data))
+            .then((res)=>setMoreDetails(res.data))
             .catch((err)=>console.log(err))
 
     },[id] );
     return(
         <>
-            {test.filter((item)=>item.id===newid).map((item,index)=>{
+            {moredetails.filter((item)=>item.id===newid).map((item,index)=>{
                 return(
                     <div key={index}>
                         <h1>More page</h1>
-            <img src={item.image}/>
+            <img src={item.image}  alt="Not Found"/>
             <button onClick={()=>navigate(-1)}>Go back</button>
                     </div>
                 )
